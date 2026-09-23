@@ -10,18 +10,6 @@ Each card shows the listing name, description, amenities, host name and photo, p
 
 The page shows two listings in each row on a regular screen. On a smaller screen, it changes to one listing in each row.
 
-## How to run the page
-
-The page uses `fetch()` to read the JSON file, so it should be opened with a local server.
-
-I used the Live Server extension in VS Code:
-
-1. Open this folder in VS Code.
-2. Right-click `index.html`.
-3. Click **Open with Live Server**.
-
-No npm install is needed.
-
 ## Files
 
 - `index.html` has the page structure.
