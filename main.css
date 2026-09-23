@@ -32,13 +32,14 @@ h1 {
   font-size: 3rem;
 }
 
-#search-input {
-  width: min(500px, 100%);
+.search-controls {
+  max-width: 800px;
   margin-top: 15px;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+}
+
+.search-controls .form-label {
+  margin-bottom: 5px;
+  font-size: 0.85rem;
 }
 
 .listings-heading {

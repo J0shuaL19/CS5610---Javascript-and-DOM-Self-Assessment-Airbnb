@@ -2,6 +2,8 @@ const listingsElement = document.querySelector("#listings");
 const messageElement = document.querySelector("#message");
 const resultCountElement = document.querySelector("#result-count");
 const searchInput = document.querySelector("#search-input");
+const minPriceInput = document.querySelector("#min-price");
+const maxPriceInput = document.querySelector("#max-price");
 
 let firstFiftyListings = [];
 
@@ -66,9 +68,19 @@ function showListings(listings) {
 
 function searchListings() {
   const searchText = searchInput.value.trim().toLowerCase();
-  const matchingListings = firstFiftyListings.filter((listing) =>
-    listing.name.toLowerCase().includes(searchText),
-  );
+  const minimumPrice = Number(minPriceInput.value) || 0;
+  const maximumPrice =
+    maxPriceInput.value === "" ? Infinity : Number(maxPriceInput.value);
+
+  const matchingListings = firstFiftyListings.filter((listing) => {
+    const listingPrice = Number(listing.price.replace("$", "").replace(",", ""));
+    const matchesName = listing.name.toLowerCase().includes(searchText);
+    const matchesPrice =
+      listingPrice >= minimumPrice && listingPrice <= maximumPrice;
+
+    return matchesName && matchesPrice;
+  });
+
   showListings(matchingListings);
 }
 
@@ -93,4 +105,6 @@ async function loadListings() {
 }
 
 searchInput.addEventListener("input", searchListings);
+minPriceInput.addEventListener("input", searchListings);
+maxPriceInput.addEventListener("input", searchListings);
 loadListings();

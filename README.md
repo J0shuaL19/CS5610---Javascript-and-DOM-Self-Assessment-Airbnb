@@ -6,7 +6,7 @@ The page uses Bootstrap for the card layout, spacing, and responsive columns. Bo
 
 ## Features
 
-Each card shows the listing name, description, amenities, host name and photo, price, and listing photo. I also added a search box that filters the listings by name.
+Each card shows the listing name, description, amenities, host name and photo, price, and listing photo. I also added search options that filter the listings by name and price range.
 
 The page shows two listings in each row on a regular screen. On a smaller screen, it changes to one listing in each row.
 
